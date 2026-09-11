@@ -23,11 +23,23 @@ repos:
     hooks:
       - id: gitleaks
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff version.
-    rev: v0.16.7
+    # Formatting tool by The Python Software Foundation
+    # Fixes the appearance/style.
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 25.9.0
     hooks:
-      # Run the linter.
-      - id: ruff-check
-      # Run the formatter.
-      - id: ruff-format
+      - id: black
+
+    # Import sorting tool by The Python Code Quality Authority (PyCQA)
+    # To organise your Python import statements consistently.
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+
+    # Linting tool by The Python Code Quality Authority (PyCQA)
+    # Finds problems like Unused imports, Naming conventions, Bad coding practices etc.
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.3.0
+    hooks:
+      - id: flake8
