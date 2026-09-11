@@ -1,26 +1,33 @@
-# Python Training Lab
+# Pycore
 
 This repository contains simple and practical python scripts to help understand python scripting concepts.
 
 ## Prerequisites
 
 ### Software Requirement
-Resources in this repository are meant for use with Python 3.x (check the version using `python3 --version`) and pip3 (check the version using `pip3 --version`). If you don't have the compatible version, download it from official python repository.
 
+Resources in this repository are meant for use with Python 3.x (check the version using `python3 --version` or `python --version`) and pip3 (check the version using `pip3 --version` or `pip --version`). If you don't have the compatible version, download it from official python repository.
+
+- [python3](https://www.python.org/downloads/) >= 3.14.6
+- [pip3](https://pypi.org/project/pip/) >= 26.1.2
 - [pre-commit](https://pre-commit.com/) >= 4.2.0
-- [python3](https://www.python.org/downloads/) >= 3.10.14
-- [pip3](https://pypi.org/project/pip/) >= 23.0.1
+
+```bash
+# Upgrade to the latest version using the following command:
+python -m pip install --upgrade pip
+```
 
 > [!NOTE]
 > See [Download Section](https://www.python.org/downloads/) on how to install Python.
 
 ### Bootstrap Virtual Environment
+
 It is a best practice to create a virtual environment for your application to avoid any conflict in dependencies between multiple applications. Hence, it is recommended to create a virtual environment (using python's default package "venv" or of your choice) and install all the dependencies. Follow below according to your operating system.
 
 ```bash
 # Linux OS
 python3 -m venv example-app-venv
-source example-app-venv/bin/activate
+source example-app-venv/bin/activate # to reload the file
 pip install -r requirements.txt
 
 # Windows OS
@@ -37,6 +44,7 @@ pip install -r requirements.txt
 > Within the virtual environment, you can use the command `pip` instead of `pip3` and `python` instead of `python3`.
 
 ## Repo Layout
+
 At a high level, these folders make up the `github.com/oneanupam/python-training-lab` repository.
 
 - [`.github/`](./.github) - This folder contains the codeowners, pull request template and github action yaml files.
@@ -47,11 +55,14 @@ At a high level, these folders make up the `github.com/oneanupam/python-training
 - [`.pre-commit-config.yaml`](.pre-commit-config.yaml) - This file contains the plugin configuration for pre-commit.
 - [`.editorconfig`](.editorconfig) - This file has the configuration for the editorconfig plugin.
 
-## How to run pre-commit
+## Run pre-commit
+
 Run the below commnad from the git repo root to set up the git hook scripts into your git hooks. It will be installed at .git/hooks/pre-commit
 
 ```bash
 pre-commit install
+pre-commit install --config <file> # If config file has non-standard name
+pre-commit validate-config # Validate .pre-commit-config.yaml files
 ```
 
 now pre-commit will run automatically on git commit. Usually, it runs only for the changed files. Its good to run the hooks against all the files when adding new hooks. To manually run all pre-commit hooks on a repo, use below -
@@ -59,6 +70,9 @@ now pre-commit will run automatically on git commit. Usually, it runs only for t
 ```bash
 # to run hooks on all files
 pre-commit run --all-files
+
+# to run hooks on all files using a non-standard naming config file
+pre-commit run --all-files --config .pre-commit-config-old.yaml
 
 # to run individual hook
 pre-commit run <hook_id>
