@@ -56,8 +56,7 @@ At a high level, these folders make up the `github.com/oneanupam/python-training
 - [`.editorconfig`](.editorconfig) - This file has the configuration for the editorconfig plugin.
 
 ## Run pre-commit
-
-Run the below commnad from the git repo root to set up the git hook scripts into your git hooks. It will be installed at .git/hooks/pre-commit
+The pre-commit framework is a powerful, language-agnostic tool for managing Git hooks. Create a .pre-commit-config.yaml file in the root of your repository. Run the below commnad from the git repo root to set up the git hook scripts into your git hooks. It will be installed at .git/hooks/pre-commit
 
 ```bash
 pre-commit install
