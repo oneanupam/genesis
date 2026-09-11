@@ -2,7 +2,7 @@
 *.tmp
 *.bak
 
-# Log files
+# Log files - intentionally commented out to test log parsing
 *.log
 logs/
 
