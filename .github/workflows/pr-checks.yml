@@ -30,10 +30,10 @@ jobs:
           echo "GitHub Repository: $GITHUB_REPO"
 
           # Store output
-          echo "metadata=${business-unit}-${{ github.job }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
+          echo "metadata=${BUSINESS_UNIT}-${{ github.job }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
           echo "tag-value=${{ github.run_number }}-${{ github.sha }}" >> $GITHUB_OUTPUT
         env:
-          business-unit: foundations
+          BUSINESS_UNIT: foundations
 
       - name: Display Metadata
         run: |
