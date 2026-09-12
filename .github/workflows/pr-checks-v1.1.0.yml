@@ -1,0 +1,22 @@
+name: PR Checks
+on:
+  push:
+    branches:
+      - main
+      - release/*
+  pull_request:
+    branches:
+      - main
+      - release/*
+jobs:
+  get_metadata:
+    name: Get Metadata
+    uses: oneanupam/platform-workflows/.github/workflows/get-metadata.yml@main
+
+  trufflehog_scan:
+    name: TruffleHog Scan
+    needs: get_metadata
+    uses: oneanupam/platform-workflows/.github/workflows/trufflehog-scan.yml@main
+    with:
+      tag: ${{ needs.get_metadata.outputs.tag }}
+      metadata: ${{ needs.get_metadata.outputs.metadata }}

@@ -18,7 +18,7 @@ jobs:
       - name: Environment Setup
         id: env_setup
         run: |
-          # Access GitHub actions expression
+          # Access Built-in Variables using GitHub actions expression
           echo "Workflow Name: ${{ github.workflow }}"
           echo "Current Job ID: ${{ github.job }}"
           echo "Run Number: ${{ github.run_number }}"
@@ -28,7 +28,7 @@ jobs:
           echo "Commit SHA: ${{ github.sha }}"
           echo "Directory for Code Checkout: ${{github.workspace}}"
 
-          # Access shell variable
+          # Access workflow level env variable
           echo "GitHub Repository: $GITHUB_REPO"
 
           # Store output
