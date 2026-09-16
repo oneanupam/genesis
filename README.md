@@ -1,47 +1,43 @@
-# Pycore
+# Genesis
 
-This repository contains simple and practical python scripts to help understand python scripting concepts.
+This repository contains a collection of simple, practical Python scripts designed to help learners understand core scripting concepts and everyday programming patterns.
 
 ## Prerequisites
 
-### Software Requirement
+### Software Requirements
 
-Resources in this repository are meant for use with Python 3.x (check the version using `python3 --version` or `python --version`) and pip3 (check the version using `pip3 --version` or `pip --version`). If you don't have the compatible version, download it from official python repository.
+Install the required tools before contributing to this project:
 
-- [python3](https://www.python.org/downloads/) >= 3.14.6
-- [pip3](https://pypi.org/project/pip/) >= 26.1.2
+- [Python 3](https://www.python.org/downloads/) >= 3.14.6
+- [pip](https://pypi.org/project/pip/) >= 26.1.2
 - [pre-commit](https://pre-commit.com/) >= 4.2.0
 
 ```bash
-# Upgrade to the latest version using the following command:
+# Upgrade pip before installing project dependencies
 python -m pip install --upgrade pip
 ```
 
 > [!NOTE]
-> See [Download Section](https://www.python.org/downloads/) on how to install Python.
+> To confirm your environment, run `python3 --version` or `python --version`, and `pip3 --version` or `pip --version`. See the [Python download page](https://www.python.org/downloads/) for installation instructions.
 
-### Bootstrap Virtual Environment
+### Set Up a Virtual Environment
 
-It is a best practice to create a virtual environment for your application to avoid any conflict in dependencies between multiple applications. Hence, it is recommended to create a virtual environment (using python's default package "venv" or of your choice) and install all the dependencies. Follow below according to your operating system.
+It is recommended to create an isolated virtual environment for this project to avoid dependency conflicts with other Python projects.
 
 ```bash
-# Linux OS
-python3 -m venv example-app-venv
-source example-app-venv/bin/activate # to reload the file
+# Linux / macOS
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 
-# Windows OS
-python -m venv example-app-venv
-example-app-venv\Scripts\activate
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
 > [!NOTE]
-> Activation makes the virtual environment the default Python interpreter for the duration of a shell session. Because, This will prepend that directory to your PATH, so that running python will invoke the virtual environment’s Python interpreter. As an indication of virtual environment activation, current shell prompt will prepend the name of the virtual environment you are currently using.
->
-> To deactivate the environment, simply type `deactivate` and you will return to your normal shell.
->
-> Within the virtual environment, you can use the command `pip` instead of `pip3` and `python` instead of `python3`.
+> Activating the virtual environment updates your shell PATH so `python` and `pip` point to the environment for the current session. To leave the environment, run `deactivate`.
 
 ## Repo Layout
 
@@ -56,32 +52,30 @@ At a high level, these folders make up the `github.com/oneanupam/python-training
 - [`.editorconfig`](.editorconfig) - This file has the configuration for the editorconfig plugin.
 
 ## Run pre-commit
-The pre-commit framework is a powerful, language-agnostic tool for managing Git hooks. Create a .pre-commit-config.yaml file in the root of your repository. Run the below commnad from the git repo root to set up the git hook scripts into your git hooks. It will be installed at .git/hooks/pre-commit
+This repository already includes a `.pre-commit-config.yaml`. Run the following commands to install the hooks locally:
 
 ```bash
+python -m pip install pre-commit
 pre-commit install
-pre-commit install --config <file> # If config file has non-standard name
-pre-commit validate-config # Validate .pre-commit-config.yaml files
+pre-commit validate-config
 ```
 
-now pre-commit will run automatically on git commit. Usually, it runs only for the changed files. Its good to run the hooks against all the files when adding new hooks. To manually run all pre-commit hooks on a repo, use below -
+This installs the hook into `.git/hooks/pre-commit`. Once installed, pre-commit runs automatically when you commit changes. By default, it checks only the files included in the commit.
+
+To run all hooks manually, use:
 
 ```bash
-# to run hooks on all files
 pre-commit run --all-files
-
-# to run hooks on all files using a non-standard naming config file
-pre-commit run --all-files --config .pre-commit-config-old.yaml
-
-# to run individual hook
 pre-commit run <hook_id>
 ```
 
-Once you have pre-commit installed, adding pre-commit plugins to your project is done with the .pre-commit-config.yaml configuration file. You can generate a very basic configuration using `pre-commit sample-config`. Every time you clone a project using pre-commit running pre-commit install should always be the first thing you do.
-
 ## Contributing
 
-Contributions are welcome! Please open issues or submit pull requests for improvements or new suggestions. Read the [contributing.md](CONTRIBUTING.md) before starting.
+Contributions and suggestions are welcome. Before opening an issue or pull request:
+
+1. Review the [contribution guidelines](CONTRIBUTING.md).
+2. Install the pre-commit hooks and run them against your changes.
+3. Open an issue for bugs or ideas, or submit a pull request with a clear description of the change.
 
 ## License
 
