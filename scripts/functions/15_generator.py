@@ -1,3 +1,4 @@
+# ruff: noqa
 # Use generators by default for 90% of your data-streaming needs. They are cleaner, faster to write, and
 # easier to maintain.
 
