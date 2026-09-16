@@ -3,8 +3,8 @@
 *.bak
 
 # Log files - intentionally commented out to test log parsing
-*.log
-logs/
+# *.log
+# logs/
 
 # Generated output
 output/
@@ -70,7 +70,7 @@ coverage.xml
 *.pot
 
 # Django stuff:
-*.log
+# *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
