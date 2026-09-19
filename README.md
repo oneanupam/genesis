@@ -80,3 +80,9 @@ Contributions and suggestions are welcome. Before opening an issue or pull reque
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## References
+
+* **MDN Web Docs.** "Understanding Semantic HTML." [developer.mozilla.org](https://mozilla.org)
+* **GitHub Docs.** "Basic writing and formatting syntax." [://github.com](https://://github.com/en/get-started/writing-on-github)
+
